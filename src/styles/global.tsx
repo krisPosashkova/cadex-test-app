@@ -1,11 +1,9 @@
 // src/styles/global.ts
 import { createGlobalStyle } from "styled-components";
-import { textMixin } from "./mixins";
 import "normalize.css";
 import "modern-css-reset";
 
 export default createGlobalStyle`
-
     *, *::before, *::after {
         margin: 0;
         padding: 0;
@@ -18,15 +16,21 @@ export default createGlobalStyle`
         height: 100%;
         margin: 0;
         padding: 0;
+        overflow: hidden;
     }
 
     body {
-        overflow: hidden;
         overflow-y: auto;
-        background-color: ${({ theme }) => theme.colors.bg};
+        background-color: ${({ theme }) => theme.palette.background.default};
         font-family: var(--font-primary), sans-serif;
-        ${textMixin({ fontSize: "16px", textWeight: 400, lineHeight: "1.2" })};
-        color: ${({ theme }) => theme.colors.font}; 
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
+        font-weight: 400;
+        line-height: 1.2;
+        color: ${({ theme }) => theme.palette.text.primary}; 
+    }
+
+    main {
+        min-height: inherit;
     }
 
     ul,
@@ -38,7 +42,6 @@ export default createGlobalStyle`
 
     button {
         background-color: transparent;
-        padding: 0;
         border: none;
         user-select: none;
     }
