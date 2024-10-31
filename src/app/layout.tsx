@@ -1,10 +1,12 @@
 "use client";
-
 import StyledComponentsRegistry from "@/lib/registry";
-import { baseTheme } from "@/styles/theme";
-import { ThemeProvider } from "styled-components";
+import { theme } from "@/styles/theme";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import GlobalStyle from "@/styles/global";
 import { Inter, Roboto_Mono } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
     weight: ["400", "600"],
@@ -26,13 +28,19 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html className={`${inter.variable} ${roboto_mono.variable}`}>
+        <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
             <body>
                 <StyledComponentsRegistry>
-                    <ThemeProvider theme={baseTheme}>
-                        <GlobalStyle />
-                        {children}
-                    </ThemeProvider>
+                    <MuiThemeProvider theme={theme}>
+                        <StyledThemeProvider theme={theme}>
+                            <>
+                                <GlobalStyle />
+                                <Header />
+                                <main>{children}</main>
+                                <Footer />
+                            </>
+                        </StyledThemeProvider>
+                    </MuiThemeProvider>
                 </StyledComponentsRegistry>
             </body>
         </html>
