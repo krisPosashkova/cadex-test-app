@@ -11,11 +11,6 @@ export const baseTheme: ITheme = {
         bg: "#E5E4E8",
         font: "#19191B",
     },
-    fonts: {
-        f1: "'Roboto', sans-serif",
-        f2: "'Inter', sans-serif",
-        f3: "'WorkSans', sans-serif",
-    },
 
     media: {
         extraLarge: "(max-width: 1140px)",

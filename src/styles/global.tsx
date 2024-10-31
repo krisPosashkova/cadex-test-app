@@ -1,64 +1,10 @@
 // src/styles/global.ts
 import { createGlobalStyle } from "styled-components";
-import { webfontMixin, textMixin } from "./mixins";
+import { textMixin } from "./mixins";
 import "normalize.css";
 import "modern-css-reset";
 
-const fonts = [
-    {
-        family: "Roboto",
-        file: "Roboto-Regular",
-        weight: 400,
-        formats: ["ttf"],
-    },
-    {
-        family: "Roboto",
-        file: "Roboto-Bold",
-        weight: 700,
-        formats: ["ttf"],
-    },
-    {
-        family: "Inter",
-        file: "Inter-Regular",
-        weight: 400,
-        formats: ["ttf"],
-    },
-    {
-        family: "Inter",
-        file: "Inter-Medium",
-        weight: 500,
-        formats: ["ttf"],
-    },
-    {
-        family: "Inter",
-        file: "Inter-SemiBold",
-        weight: 600,
-        formats: ["ttf"],
-    },
-    {
-        family: "WorkSans",
-        file: "WorkSans-Light",
-        weight: 300,
-        formats: ["ttf"],
-    },
-];
-
-const fontFaces = fonts.map((item) =>
-    webfontMixin({
-        family: item.family,
-        file: item.file,
-        weight: item.weight,
-        formats: item.formats,
-    })
-);
 export default createGlobalStyle`
-    /* Подключаем шрифты */
-    ${fontFaces}
-
-    :root {
-        --font-primary: 'Roboto', sans-serif;
-        --font-secondary: 'Inter', sans-serif;
-    }
 
     *, *::before, *::after {
         margin: 0;
@@ -78,7 +24,7 @@ export default createGlobalStyle`
         overflow: hidden;
         overflow-y: auto;
         background-color: ${({ theme }) => theme.colors.bg};
-        font-family: var(--font-primary);
+        font-family: var(--font-primary), sans-serif;
         ${textMixin({ fontSize: "16px", textWeight: 400, lineHeight: "1.2" })};
         color: ${({ theme }) => theme.colors.font}; 
     }

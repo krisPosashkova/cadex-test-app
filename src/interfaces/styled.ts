@@ -1,14 +1,4 @@
 // styles/interfaces.ts
-export type FontWeight = "normal" | "bold" | "bolder" | "lighter" | number;
-export type FontStyle = "normal" | "italic" | "oblique";
-
-export interface IWebFontMixin {
-    family: string;
-    file: string;
-    weight?: FontWeight;
-    style?: FontStyle;
-    formats?: string[];
-}
 
 export interface ITextMixin {
     fontSize: string;
@@ -25,12 +15,6 @@ export interface ITheme {
 
         bg: string;
         font: string;
-    };
-
-    fonts: {
-        f1: string;
-        f2: string;
-        f3: string;
     };
 
     media: {
