@@ -29,9 +29,19 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.palette.text.primary}; 
     }
 
-    main {
-        min-height: inherit;
+   
+    header {
+        height: 100px; /* Минимальная высота для хедера */
     }
+
+    footer {
+        height: 130px; /* Минимальная высота для футера */
+    }
+
+    main {
+        min-height: calc(100vh - 230px); /* Высота экрана минус высота хедера и футера */
+    }
+
 
     ul,
     ol {
