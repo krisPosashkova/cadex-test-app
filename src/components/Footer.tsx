@@ -17,6 +17,7 @@ const FooterContent = styled(Container)({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    height: "100%",
 });
 
 const Footer: React.FC = () => {

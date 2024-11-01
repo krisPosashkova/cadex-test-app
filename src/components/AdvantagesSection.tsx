@@ -86,7 +86,7 @@ const AdvantagesItem = styled(ListItem)(({ theme }) => ({
         height: "4px",
         backgroundColor: theme.palette.secondary.main,
         transform: "scaleX(0)",
-        transition: `transform ${theme.custom.opacity}s ease`,
+        transition: `transform ${theme.custom.durations.ms300}s ease`,
         transformOrigin: "left",
     },
 }));

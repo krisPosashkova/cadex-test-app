@@ -21,11 +21,12 @@ const HeaderContent = styled(Container)({
     alignItems: "center",
     flexWrap: "wrap",
     gap: theme.spacing(2),
+    height: "100%",
 });
 
 const CompanyName = styled(Link)({
     fontWeight: 700,
-    transition: `opacity ${theme.custom.opacity}s ease`,
+    transition: `opacity ${theme.custom.durations.ms300}s ease`,
 
     "&:hover": {
         opacity: theme.custom.opacity,
