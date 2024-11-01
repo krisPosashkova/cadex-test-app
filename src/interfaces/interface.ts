@@ -1,4 +1,5 @@
 import { ButtonProps } from "@mui/material";
+import { Control, FieldErrors } from "react-hook-form";
 
 export interface ICustomButtonProps extends ButtonProps {
     href?: string;
@@ -17,8 +18,8 @@ export interface IFormInputs {
 export interface IFormFieldProps {
     name: keyof IFormInputs;
     label: string;
-    control: any;
-    errors: any;
+    control: Control<IFormInputs>;
+    errors: FieldErrors<IFormInputs>;
     multiline?: boolean;
     rows?: number;
     rules: object;

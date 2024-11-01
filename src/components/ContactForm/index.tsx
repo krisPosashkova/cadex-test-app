@@ -1,7 +1,6 @@
 "use client";
 import { validationRules } from "./validationRules";
 import { useState } from "react";
-import { UseFormReset } from "react-hook-form";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Container, CircularProgress, Typography } from "@mui/material";
@@ -98,7 +97,7 @@ const ContactForm: React.FC = () => {
                         variant="h1"
                         component="h1"
                         sx={{ marginBottom: 6 }}>
-                        We're Here to Help!
+                        We are Here to Help!
                     </Typography>
 
                     <ResponseMessage
