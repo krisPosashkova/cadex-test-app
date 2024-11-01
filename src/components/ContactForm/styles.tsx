@@ -43,6 +43,7 @@ export const FormContact = styled.form(({ theme }) => ({
     "&.is-response": {
         opacity: 0,
         visibility: "hidden",
+        height: 0,
     },
 }));
 
